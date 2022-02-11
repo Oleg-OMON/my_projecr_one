@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'main.AdvUser'
 
 # Application definition
 
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'bboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'bboard.data',
+        'NAME': BASE_DIR / 'bboard.sqlite3',
     }
 }
 
@@ -128,3 +129,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

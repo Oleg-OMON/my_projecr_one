@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% exteds "layout/basic.html" %}
+{% load bootstrap4 %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} Вход {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h2>Вход</h2>
+    {% if user.is_authenticated %}
+    <p></p>
+    {% else %}
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    <input type="hidden" name="next" value="{{next}}">
+    {% buttons submit='Войти' %}{% endbuttons %}
+</form>
+    {% endif %}
+    {% endblock %}
+
+</body>
+</html>
