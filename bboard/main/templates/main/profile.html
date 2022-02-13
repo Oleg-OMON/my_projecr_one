@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% exteds "layout/basic.html" %}
+{% extends "layout/basic.html" %}
 
 <html lang="en">
 <head>
@@ -8,6 +8,13 @@
 </head>
 <body>
   {% block content %}
-
+  <h2>Профиль пользователя {{ user.username }}</h2>
+    {% if user.first_name and user.last_name %}
+    <p> Здравстуйте, {{ user.first_name}} {{ user.last_name }}</p>
+    {% else %}
+   <p>Зравствуйте!</p>
+    {% endif %}
+    <h3>Ваши обьявления</h3>
+    {% endblock %}
 </body>
 </html>
