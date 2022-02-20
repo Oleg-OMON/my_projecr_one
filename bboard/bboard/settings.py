@@ -1,3 +1,4 @@
+
 """
 Django settings for bboard project.
 
